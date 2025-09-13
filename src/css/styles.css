@@ -1,0 +1,14 @@
+/* MAIN STYLES */ 
+
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Gowun+Batang&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root{
+    --brand: rgba(9,64,0,1);
+    --brand-mute: rgba(67,140,55,1);
+    --brand-shade: rgba(237,255,233,1);
+    --accent: rgba(10,13,58,1);
+    --accent-mute: rgba(36,92,151,1);
+    --accent-shade: rgba(184,219,255,1);
+    --neutral: rgba(239,246,255,1);
+    --surface: rgba(255,255,255,1);
+}
