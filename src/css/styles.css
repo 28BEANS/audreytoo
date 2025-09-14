@@ -12,3 +12,91 @@
     --neutral: rgba(239,246,255,1);
     --surface: rgba(255,255,255,1);
 }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    padding: 1% 5%;
+}
+
+.spacer{
+    flex: 1;
+}
+
+.logo{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    gap: .5em;
+}
+
+.logo >img{
+    width: 20px;
+    height: 20px;
+}
+
+.logo > p{
+    font-family: 'Instrument Serif', sans-serif;
+    font-size: 4.2em;
+    color: var(--brand);
+}
+
+nav {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 3px;
+    box-shadow: 4px 7px 8px rgba(0, 0, 0, .25);
+}
+
+nav > ul{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+nav > ul > #img-home{
+    padding: 10px;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+nav > ul img{
+    width: 25px;
+    filter: invert(1) brightness(2);
+}
+
+nav > ul > li{
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+nav > ul > li:hover, nav > ul > li:hover a{
+    background-color: var(--accent-mute);
+    color: var(--surface);
+}
+
+nav > ul > li > a{
+    font-family: 'GFS Neohellenic', sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: black;
+    word-spacing: -.2em;
+}
+
+.current-page{
+    background-color: var(--accent-mute);
+}
+
+.current-page > a{
+    color: var(--surface);
+}
