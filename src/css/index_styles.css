@@ -16,20 +16,26 @@
 #top-bg{
     background-color: var(--brand-shade);
     height: 10%;
+    padding-bottom: 10%;
 }
 
 #top-container{
     display: flex;
     justify-content: center;
+    padding: 0 12%;
+    margin-top: 1%;
 }
 
 #top-img-container{
+    display: flex;
+    justify-content: center;
     width: 50%;
 }
 
-#top-container img{
-    width: 300px;
+#top-img-container img{
+    width: 400px;
     margin: auto 0;
+    filter: drop-shadow(4px 8px 2px rgba(0,0,0, 0.25));
 }
 
 #top-word-wrapper{
@@ -38,9 +44,144 @@
     justify-content: center;
     text-align:end;
     color: var(--accent-mute);
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bolder;
     width: 50%;
-    line-height: 1em;
+    line-height: 1.2em;
     text-align: center;
 }
+
+#grid-bg{
+    height: 1200px;
+    background-image: url(../img/flower\ scribbles.png);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+#grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.grid-img{
+    height: calc(1200px/3);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.img1{
+    background-image: url(../img/npr.brightspotcdn.jpg);
+}
+
+.img2{
+    background-image: url(../img/desktop-wallpaper-collection-succulent-succulent-plants-succulents.jpg);
+}
+
+.img3{
+    background-image: url(../img/plant-giveaway-featured-image-e958fc4c03ca6ea6-1024x683.jpg);
+}
+
+.grid-descriptors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 25%;
+}
+
+.grid-descriptors > p:first-child{
+    font-weight: bold;
+    font-size: 2.5em;
+    color: var(--accent-mute);
+}
+
+.grid-descriptors > p:nth-of-type(2){
+    font-size: 1.8em;
+    line-height: 1em;
+    margin: 3% 0 6% 0;
+}
+
+.grid-descriptors > p:nth-of-type(3){
+    background-color: var(--accent-mute);
+    padding: 2% 15px;
+    border-radius: 30px;
+}
+
+.grid-descriptors > p:nth-of-type(3) a{
+    text-decoration: none;
+    color: var(--surface);
+    font-size: 1.2em;
+}
+
+#grid-container > .grid-img:nth-child(4n+1) {
+    grid-column: 1;
+}
+
+
+#grid-container > .grid-descriptors:nth-child(4n+2) {
+    grid-column: 2;
+}
+
+#clique{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+#clique p:nth-of-type(1){
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--accent-mute);
+}
+
+#clique p:nth-of-type(2){
+    font-size: 1.6em;
+    margin-top: -1%;
+    margin-bottom: 2%;
+}
+
+#clique p:nth-of-type(3){
+    background-color: var(--accent-mute);
+    padding: 5px 35px;
+    border-radius: 30px;
+}
+
+#clique p:nth-of-type(3) a{
+    text-decoration: none;
+    color: var(--surface);
+    font-size: 1.2em;
+}
+
+#plant-collage{
+    min-height: 700px;
+    background-color: var(--neutral);
+}
+
+footer{
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    min-height: 40px;
+    font-family: 'GFS Neohellenic';
+    font-size: 1.5em;
+    background-color: var(--accent-shade);
+}
+#social-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+}
+
+#social-icon img{
+    width: 30px;
+    display: block;
+}
+

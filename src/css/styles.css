@@ -76,6 +76,7 @@ nav > ul > #img-home{
 nav > ul img{
     width: 25px;
     filter: invert(1) brightness(2);
+    display: block;
 }
 
 nav > ul > li{
