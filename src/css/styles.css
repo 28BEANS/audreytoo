@@ -1,6 +1,6 @@
 /* MAIN STYLES */ 
 
-@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Gowun+Batang&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Gowun+Batang:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap');
 
 :root{
     --brand: rgba(9,64,0,1);
@@ -17,6 +17,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body{
+    font-family: "Gowun Batang";
 }
 
 
@@ -100,3 +104,4 @@ nav > ul > li > a{
 .current-page > a{
     color: var(--surface);
 }
+
