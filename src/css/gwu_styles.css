@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Gowun+Batang:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+#gwu-form{
+    height: calc(100vh - 116.5px - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#form-bg-out{
+    height: calc(85vh - 116.5px - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../img/flower\ scribbles.png);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+#form-bg-in{
+    height: calc(70vh - 116.5px - 40px);
+    background-color: var(--brand-shade);
+    box-shadow: 0 0 10px rgba(0,0,0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+#form-header > p{
+    font-weight: bold;
+    font-size: 3em;
+    color: var(--accent-mute);
+}
+
+#form-header > img{
+    width: 25px;
+    height: 25px;
+}
+
+.form-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.form-row input, .form-row select{
+    flex: 1;
+    max-width: 60%;
+    background-color: var(--surface);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.25);
+    padding: 8px;
+}
+
+form label{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--brand);
+}
+
+#form-btn-wrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20%;
+    gap: 50px;
+}
+
+form{
+    min-width: 70%;
+}
+
+
+#form-btn-wrap button{
+    font-size: 1.5em;
+    font-family: "GFS Neohellenic", sans-serif;
+    padding: 8px 40px;
+    background-color: var(--accent-mute);
+    border: none;
+    border-radius: 30px;
+    color: var(--surface);
+}
