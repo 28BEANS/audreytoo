@@ -106,3 +106,23 @@ nav > ul > li > a{
     color: var(--surface);
 }
 
+footer{
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    min-height: 40px;
+    font-family: 'GFS Neohellenic';
+    font-size: 1.5em;
+    background-color: var(--accent-shade);
+}
+#social-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+}
+
+#social-icon img{
+    width: 30px;
+    display: block;
+}
