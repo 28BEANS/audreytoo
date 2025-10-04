@@ -5,29 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>audrey too | Monthly Picks</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/monthly_styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <p>audrey</p>
+
+    <div id="mp-bg">
+        <header>
+            <div class="logo">
+                <p>audrey</p>
+                <img src="img/v946-aum-02a-Photoroom.png" alt="hollow flower">
+                <p>too</p>
+            </div>
+
+            <div class="spacer"></div>
+
+            <nav>
+                <ul>
+                    <div id="img-home">
+                        <a href="index.html"><img src="img/leaf-svgrepo-com.svg" alt="two leaves"></a>
+                    </div>
+                    <li class="current-page"><a href="monthly_picks.html">Monthly Picks</a></li>
+                    <li><a href="green_gallery.html">Green Gallery</a></li>
+                    <li><a href="grow_with_us.html">Grow With Us</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="mp-desc">
+            <p id="desc-header">Monthly Picks</p>
+            <p>Discover a selection of curated plant varieties. Each plant are handpicked  perfect for adding dynamic aura and authenticity to your green space.</p>
+        </section>
+    </div>
+
+    <section id="plant-picks">
+        <div id="pp-header">
             <img src="img/v946-aum-02a-Photoroom.png" alt="hollow flower">
-            <p>too</p>
+            <p>Our Best Floras</p>
+            <img src="img/v946-aum-02a-Photoroom.png" alt="hollow flower">
+        </div>
+
+        <div class="carousel">
+            <span class="arrow" id="prev">&#10094;</span>
+            <div class="carousel-images" id="carousel">
+            </div>
+            <span class="arrow" id="next">&#10095;</span>
+        </div>
+
+        <div class="details">
+            <h2 id="plantName"></h2>
+            <button class="btn" id="checkBtn">Check it out</button>
+            <div class="indicators" id="indicators"></div>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p>This is more information about the plant.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div>
+            <p>&copy; 2025 audrey too</p>
         </div>
 
         <div class="spacer"></div>
 
-        <nav>
-            <ul>
-                <div id="img-home">
-                    <a href="index.html"><img src="img/leaf-svgrepo-com.svg" alt="two leaves"></a>
-                </div>
-                <li class="current-page"><a href="monthly_picks.html">Monthly Picks</a></li>
-                <li><a href="green_gallery.html">Green Gallery</a></li>
-                <li><a href="grow_with_us.html">Grow With Us</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div id="social-icon">
+            <a href="#"><img src="img/facebook-svgrepo-com.svg" alt="facebook logo"></a>
+            <a href="#"><img src="img/instagram-svgrepo-com.svg" alt="instagram logo"></a>
+            <a href="#"><img src="img/discord-svgrepo-com.svg" alt="discord logo"></a>
+        </div>
+    </footer>
+
+
+
+    <script src="script/monthly.js"></script>
     
 </body>
 </html>
