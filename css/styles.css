@@ -86,11 +86,6 @@ nav > ul > li{
     border-radius: 30px;
 }
 
-/* nav > ul > li:hover, nav > ul > li:hover a{
-    background-color: var(--accent-mute);
-    color: var(--surface);
-} */
-
 nav > ul > li > a{
     font-family: 'GFS Neohellenic', sans-serif;
     font-size: 1.2em;
