@@ -122,8 +122,8 @@
 
     .btn {
       padding: 10px 20px;
-      border: none;
-      background: steelblue;
+      border: 1px solid var(--accent-mute);
+      background: var(--accent-mute);
       color: white;
       border-radius: 20px;
       cursor: pointer;
@@ -132,7 +132,9 @@
     }
 
     .btn:hover {
-      background: darkblue;
+      background: none;
+      color: var(--accent-mute);
+      border: 1px solid var(--accent-mute);
     }
 
     .indicators {
