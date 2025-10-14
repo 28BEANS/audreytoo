@@ -1,22 +1,25 @@
 
 const plants = [
-  { name: "Evan Hansen", img: "img/collections/collection1.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection2.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection3.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection4.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection5.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection6.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection7.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection8.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection9.jpg", avatar: "img/avatars/evan.jpg" },
-  { name: "Evan Hansen", img: "img/collections/collection10.jpg", avatar: "img/avatars/evan.jpg" },
-
-  // Example: another user
-  { name: "Zoe Rivera", img: "img/collections/collection11.jpg", avatar: "img/avatars/zoe.jpg" },
-  { name: "Zoe Rivera", img: "img/collections/collection12.jpg", avatar: "img/avatars/zoe.jpg" },
-  { name: "Zoe Rivera", img: "img/collections/collection13.jpg", avatar: "img/avatars/zoe.jpg" },
-  { name: "Zoe Rivera", img: "img/collections/collection14.jpg", avatar: "img/avatars/zoe.jpg" },
-  { name: "Zoe Rivera", img: "img/collections/collection15.jpg", avatar: "img/avatars/zoe.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection1.jpg", avatar: "img/avatars/avatar1.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection2.jpg", avatar: "img/avatars/avatar2.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection3.jpg", avatar: "img/avatars/avatar3.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection4.jpg", avatar: "img/avatars/avatar4.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection5.jpg", avatar: "img/avatars/avatar5.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection6.jpg", avatar: "img/avatars/avatar6.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection7.jpg", avatar: "img/avatars/avatar7.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection8.jpg", avatar: "img/avatars/avatar8.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection9.jpg", avatar: "img/avatars/avatar9.jpg" },
+  { name: "Evan Hansen", img: "img/collections/collection10.jpg", avatar: "img/avatars/avatar10.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection11.jpg", avatar: "img/avatars/avatar11.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection12.jpg", avatar: "img/avatars/avatar12.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection13.jpg", avatar: "img/avatars/avatar13.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection14.jpg", avatar: "img/avatars/avatar14.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection15.jpg", avatar: "img/avatars/avatar15.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection16.jpg", avatar: "img/avatars/avatar16.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection17.jpg", avatar: "img/avatars/avatar17.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection18.jpg", avatar: "img/avatars/avatar18.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection19.jpg", avatar: "img/avatars/avatar19.jpg" },
+  { name: "Zoe Rivera", img: "img/collections/collection20.jpg", avatar: "img/avatars/avatar20.jpg" },
 
   // Add more objects as needed
 ];
