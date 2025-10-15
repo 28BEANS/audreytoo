@@ -53,7 +53,45 @@
                 <li id="next" class="btn">Next</li>
             </ul>
         </div>
+
+
+        
     </section>
+
+    <!-- this what i added-->
+
+    <!-- Modal -->
+<div id="gallery-modal" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-btn">×</button>
+    <button class="arrow left-arrow">❮</button>
+    <button class="arrow right-arrow">❯</button>
+
+    <!-- Left section -->
+    <div class="modal-left">
+      <div class="user-info">
+        <img id="modal-avatar" class="avatar-large" src="" alt="user avatar">
+        <p id="modal-username"></p>
+        <p id="modal-caption" class="caption"></p>
+      </div>
+
+      <!-- Collapsible plant list -->
+      <div id="plant-panel" class="plant-panel">
+        <div class="panel-header">
+          <h3>Where you can get them</h3>
+          <button id="collapse-btn">⟨</button>
+        </div>
+        <div class="plant-list"></div>
+      </div>
+    </div>
+
+    <!-- Right section -->
+    <div class="modal-right">
+      <img id="modal-image" src="" alt="collection" class="collection-img">
+    </div>
+  </div>
+</div>
+
 
     <footer>
         <div>

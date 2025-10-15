@@ -91,3 +91,186 @@
     box-shadow: 0 3px 7px 1px rgba(0, 0, 0, 0.60);
 }
 
+
+
+/* Modal base */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.hidden { display: none; }
+
+.modal-content {
+  position: relative;
+  background: rgb(221, 221, 221);
+  background-image: url("../img/flower\ scribbles2.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  display: flex;
+  width: 70%;
+  height: 75%;
+  overflow: hidden;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px; 
+  left: 50%;
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-mute);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;     
+  pointer-events: auto;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.left-arrow { left: 15px; }
+.right-arrow { right: 15px; }
+
+/* Left section */
+.modal-left {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 10px 45px;
+}
+
+.user-info {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--brand);
+}
+
+.avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.caption {
+  margin: 0 auto;
+  margin-top: 50px;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  color: #333;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.463);
+  padding: 20px;
+  border-radius: 20px;
+  font-weight: normal;
+}
+
+/* Collapsible panel */
+.plant-panel {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #f4fff4;
+  overflow-y: auto;
+  transition: left 0.4s ease;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  z-index: 50;
+}
+.plant-panel.active { left: 0; }
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d6eed6;
+  padding: 10px 15px;
+  position: sticky;
+  top: 0;
+}
+
+#collapse-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.plant-list {
+  padding: 15px;
+}
+
+.plant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.plant-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.plant-item button {
+  background: var(--accent-mute);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-family: "GFS Neohellenic", sans-serif;
+}
+
+/* Right section */
+.modal-right {
+  width : 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+.collection-img {
+  width: 95%;
+  height: 90%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 1rem;
+  box-shadow: 0 3.5px 3.5px 4.8px rgba(0, 0, 0, 0.25);
+}

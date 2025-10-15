@@ -5,7 +5,7 @@ const plants = [
       { name: "Snake Plant", img: "https://i.ibb.co/4jr6GvG/snakeplant.jpg" },
     ];
 
-    let current = 1; // Start from second item for demo
+    let current = 1; 
     const carousel = document.getElementById("carousel");
     const plantName = document.getElementById("plantName");
     const indicators = document.getElementById("indicators");

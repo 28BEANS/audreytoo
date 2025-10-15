@@ -21,7 +21,6 @@ const plants = [
   { name: "Zoe Rivera", img: "img/collections/collection19.jpg", avatar: "img/avatars/avatar19.jpg" },
   { name: "Zoe Rivera", img: "img/collections/collection20.jpg", avatar: "img/avatars/avatar20.jpg" },
 
-  // Add more objects as needed
 ];
 
 const gallery = document.querySelector(".gallery");
@@ -86,7 +85,83 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-// Initialize
 displayGallery(currentPage);
 updateActiveButton();
 
+// this is what I added
+
+const modal = document.getElementById("gallery-modal");
+const modalImg = document.getElementById("modal-image");
+const modalAvatar = document.getElementById("modal-avatar");
+const modalUsername = document.getElementById("modal-username");
+const modalCaption = document.getElementById("modal-caption");
+const closeBtn = document.querySelector(".close-btn");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
+const plantPanel = document.getElementById("plant-panel");
+const collapseBtn = document.getElementById("collapse-btn");
+const plantList = document.querySelector(".plant-list");
+
+let currentModalIndex = 0;
+
+// Example plants for modal (replace dynamically later)
+const examplePlants = [
+  { name: "Haworthiopsis attenuata", img: "../img/indiv-plants/haworthia.png", link: "#" },
+  { name: "Echeveria Subsessilis", img: "../img/indiv-plants/echeveria.png", link: "#" },
+  { name: "White Barrel Cacti", img: "../img/indiv-plants/barrel-cactus.png", link: "#" }
+];
+
+function populatePlantList() {
+  plantList.innerHTML = "";
+  examplePlants.forEach(p => {
+    const div = document.createElement("div");
+    div.classList.add("plant-item");
+    div.innerHTML = `
+      <div>
+        <h4>${p.name}</h4>
+      </div>
+      <img src="${p.img}" alt="${p.name}">
+      <button onclick="window.open('${p.link}', '_blank')">Check it out</button>
+    `;
+    plantList.appendChild(div);
+  });
+}
+
+function openModal(index) {
+  currentModalIndex = index;
+  const item = plants[index];
+  modal.classList.remove("hidden");
+  modalImg.src = item.img;
+  modalAvatar.src = item.avatar;
+  modalUsername.textContent = item.name;
+  modalCaption.textContent = "Not much yet, but here’s my little green corner still learning as I go, but proud of these babies!";
+  populatePlantList();
+}
+
+function closeModal() {
+  modal.classList.add("hidden");
+  plantPanel.classList.remove("active");
+}
+
+gallery.addEventListener("click", e => {
+  const tile = e.target.closest(".tile");
+  if (!tile) return;
+  const index = Array.from(gallery.children).indexOf(tile);
+  openModal((currentPage - 1) * itemsPerPage + index);
+});
+
+closeBtn.addEventListener("click", closeModal);
+
+leftArrow.addEventListener("click", () => {
+  if (currentModalIndex > 0) openModal(currentModalIndex - 1);
+});
+rightArrow.addEventListener("click", () => {
+  if (currentModalIndex < plants.length - 1) openModal(currentModalIndex + 1);
+});
+
+modalImg.addEventListener("click", () => {
+  plantPanel.classList.add("active");
+});
+collapseBtn.addEventListener("click", () => {
+  plantPanel.classList.remove("active");
+});
