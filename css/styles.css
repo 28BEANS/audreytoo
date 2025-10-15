@@ -122,3 +122,15 @@ footer{
     width: 30px;
     display: block;
 }
+
+
+@media (max-width: 1024px){
+    header{
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 480px){
+
+}

@@ -220,11 +220,17 @@
   top: 0;
 }
 
+.panel-header h3{
+  color: var(--brand);
+  font-size: 1.5em;
+}
+
 #collapse-btn {
   background: none;
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
+  color: var(--accent-mute);
 }
 
 .plant-list {

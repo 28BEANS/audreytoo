@@ -135,33 +135,91 @@
     min-height: 500px;
 }
 
-#clique p:nth-of-type(1){
+#clique div p:nth-of-type(1){
     font-size: 2.5em;
     font-weight: bold;
     color: var(--accent-mute);
 }
 
-#clique p:nth-of-type(2){
+#clique div p:nth-of-type(2){
     font-size: 1.6em;
     margin-top: -1%;
     margin-bottom: 2%;
 }
 
-#clique p:nth-of-type(3){
+#clique > p{
     background-color: var(--accent-mute);
     padding: 5px 35px;
     border-radius: 30px;
 }
 
-#clique p:nth-of-type(3) a{
+#clique > p a{
     text-decoration: none;
     color: var(--surface);
     font-size: 1.2em;
 }
 
 #plant-collage{
-    min-height: 700px;
+
     background-color: var(--neutral);
 }
 
+#plant-collage img{
+    width: 100%;
+}
 
+
+@media (max-width: 1024px){
+
+    #top-container{
+        margin-top: 5%;
+    }
+    #top-word-wrapper{
+        font-size: 2em;
+    }
+
+    #top-img-container img{
+        width: 300px;
+    }
+
+    #grid-bg{
+    height: 900px;
+    }
+
+    .grid-img{
+    height: calc(900px/3);
+    }
+
+    .grid-descriptors > p:first-child{
+        font-size: 2em;
+    }
+
+    .grid-descriptors > p:nth-of-type(2){
+        font-size: 1.4em;
+    }
+    .grid-descriptors > p:nth-of-type(3) a{
+        font-size: 1em;
+    }
+
+    #clique{
+        flex-direction: row;
+        padding: 0 10%;
+        min-height: 450px;
+    }
+
+    #clique div{
+        width: 50%;
+        text-align: center;
+    }
+
+    #clique > p{
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1.3em;
+    }
+}
+
+
+@media (max-width: 480px){
+
+}
