@@ -151,11 +151,13 @@ footer{
     box-shadow: 4px 7px 8px rgba(0, 0, 0, .25);
     cursor: pointer;
     backdrop-filter: blur(7px);
+    background: none;
 }
 
 .menu-toggle img {
     width: 25px;
     filter: invert(1) brightness(2);
+    display: block;
 }
 
 .menu-toggle .menu-icon {
@@ -181,10 +183,6 @@ footer{
 }
 
 
-
-
-
-
 @media (max-width: 1024px){
     header{
         flex-direction: column;
@@ -192,6 +190,15 @@ footer{
 }
 
 @media (max-width: 480px) {
+    .logo > p{
+        font-size: 3.5em;
+    }
+
+    .logo >img{
+        width: 20px;
+        height: 20px;
+    }
+
     header {
         flex-direction: row;
         justify-content: space-between;

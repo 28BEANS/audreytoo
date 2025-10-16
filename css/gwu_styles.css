@@ -116,7 +116,7 @@ form{
         font-size: 1.2em;
     }
 
-    button{
+    #submit{
         margin-top: -30px;
     }
 }
