@@ -106,9 +106,9 @@ let currentModalIndex = 0;
 
 // Example plants for modal (replace dynamically later)
 const examplePlants = [
-  { name: "Haworthiopsis attenuata", img: "../img/indiv-plants/haworthia.png", link: "#" },
-  { name: "Echeveria Subsessilis", img: "../img/indiv-plants/echeveria.png", link: "#" },
-  { name: "White Barrel Cacti", img: "../img/indiv-plants/barrel-cactus.png", link: "#" }
+  { name: "Haworthiopsis attenuata", img: "img/indiv-plants/haworthia.png", link: "#" },
+  { name: "Echeveria Subsessilis", img: "img/indiv-plants/echeveria.png", link: "#" },
+  { name: "White Barrel Cacti", img: "img/indiv-plants/barrel-cactus.png", link: "#" }
 ];
 
 function populatePlantList() {
