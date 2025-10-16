@@ -43,3 +43,28 @@
 #img-container img{
     width: 550px;
 }
+
+
+@media (max-width: 1024px){
+    #desc{
+        padding: 10% 10% 0 0;
+    }
+
+    #desc #header{
+        font-size: 2em;
+    }
+
+    #desc p{
+        font-size: 1.2em;
+    }
+
+    #img-container img{
+        width: 100%;
+        margin-top: -100px;
+    }
+
+    #img-container{
+        display: flex;
+        align-items: center;
+    }
+}

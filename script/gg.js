@@ -1,4 +1,3 @@
-
 const plants = [
   { name: "Evan Hansen", img: "img/collections/collection1.jpg", avatar: "img/avatars/avatar1.jpg" },
   { name: "Evan Hansen", img: "img/collections/collection2.jpg", avatar: "img/avatars/avatar2.jpg" },
@@ -20,7 +19,6 @@ const plants = [
   { name: "Zoe Rivera", img: "img/collections/collection18.jpg", avatar: "img/avatars/avatar18.jpg" },
   { name: "Zoe Rivera", img: "img/collections/collection19.jpg", avatar: "img/avatars/avatar19.jpg" },
   { name: "Zoe Rivera", img: "img/collections/collection20.jpg", avatar: "img/avatars/avatar20.jpg" },
-
 ];
 
 const gallery = document.querySelector(".gallery");
@@ -28,9 +26,14 @@ const pagination = document.querySelectorAll("#nav-gg ul li:not(.btn)");
 const backBtn = document.getElementById("back");
 const nextBtn = document.getElementById("next");
 
-const itemsPerPage = 10;
+function getItemsPerPage() {
+  if (window.innerWidth <= 1024) return 9;   // tablet or smaller
+  return 10;                                 // desktop default
+}
+
+let itemsPerPage = getItemsPerPage(); 
 let currentPage = 1;
-const totalPages = Math.ceil(plants.length / itemsPerPage);
+let totalPages = Math.ceil(plants.length / itemsPerPage);
 
 function displayGallery(page) {
   gallery.innerHTML = "";
@@ -85,10 +88,22 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
+
+window.addEventListener("resize", () => {
+  const newItemsPerPage = getItemsPerPage();
+  if (newItemsPerPage !== itemsPerPage) {
+    itemsPerPage = newItemsPerPage;
+    totalPages = Math.ceil(plants.length / itemsPerPage);
+    currentPage = 1;
+    displayGallery(currentPage);
+    updateActiveButton();
+  }
+});
+
 displayGallery(currentPage);
 updateActiveButton();
 
-// this is what I added
+// ----- MODAL CODE -----
 
 const modal = document.getElementById("gallery-modal");
 const modalImg = document.getElementById("modal-image");
@@ -104,7 +119,6 @@ const plantList = document.querySelector(".plant-list");
 
 let currentModalIndex = 0;
 
-// Example plants for modal (replace dynamically later)
 const examplePlants = [
   { name: "Haworthiopsis attenuata", img: "img/indiv-plants/haworthia.png", link: "#" },
   { name: "Echeveria Subsessilis", img: "img/indiv-plants/echeveria.png", link: "#" },

@@ -280,3 +280,39 @@
   border-radius: 1rem;
   box-shadow: 0 3.5px 3.5px 4.8px rgba(0, 0, 0, 0.25);
 }
+
+
+@media (max-width: 1024px){
+  .gallery{
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+
+  #nav-gg ul{
+    gap: 15px;
+  }
+
+  #nav-gg ul li{
+    font-size: 20px;
+  }
+
+  .modal-right{
+    width: 45%;
+  }
+
+  .modal-left{
+    width: 55%;
+  }
+
+  .user-info{
+    font-size: 1.4em;
+  }
+
+  .plant-item button{
+    font-size: 0.8em;
+  }
+
+  .plant-item h4{
+    font-size: 0.8em;
+  }
+}

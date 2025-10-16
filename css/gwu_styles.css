@@ -92,3 +92,31 @@ form{
     color: var(--surface);
     cursor: pointer;
 }
+
+@media (max-width: 1024px){
+    #form-header > p{
+        font-size: 2.5em;
+    }
+
+    #form-header > img{
+        width: 20px;
+        height: 20px;
+    }
+
+    #form-btn-wrap{
+        flex-direction: column;
+        padding: 0 10%;
+    }
+
+    form{
+        min-width: 80%;
+    }
+
+    form label{
+        font-size: 1.2em;
+    }
+
+    button{
+        margin-top: -30px;
+    }
+}
