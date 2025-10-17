@@ -4,11 +4,13 @@
     height: calc(100vh - 116.5px - 40px);
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 #form-bg-out{
     height: calc(85vh - 116.5px - 40px);
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,10 +89,17 @@ form{
     font-family: "GFS Neohellenic", sans-serif;
     padding: 8px 40px;
     background-color: var(--accent-mute);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 30px;
     color: var(--surface);
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#form-btn-wrap button:hover{
+    background: none;
+    color: var(--accent-mute);
+    border: 1px solid var(--accent-mute);
 }
 
 @media (max-width: 1024px){
@@ -121,6 +130,83 @@ form{
     }
 }
 
-@media (max-width: 1024px){
-    
+@media (max-width: 480px){
+    #gwu-form {
+        height: 100vh;
+        justify-content: flex-start;
+    }
+
+    #form-bg-out {
+        height: 85%;
+        padding: 10% 0;
+    }
+
+    #form-bg-in {
+        height: 90%;
+        padding: 0 10%;
+    }
+
+    #form-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #form-header > p {
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 1.2em;
+    }
+
+    #form-header > img {
+        width: 18px;
+        height: 18px;
+    }
+
+    form {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    form label {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .form-row input,
+    .form-row select {
+        max-width: 90%;
+        width: 90%;
+        font-size: 1em;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    #form-btn-wrap {
+        flex-direction: column;
+        padding: 0;
+        gap: 15px;
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #form-btn-wrap button {
+        font-size: 1em;
+        padding: 8px 30px;
+        border-radius: 20px;
+    }
+
+    button#submit{
+        margin-top: 5%;
+    }
 }
