@@ -338,17 +338,19 @@
   .modal-left, .modal-right { 
     width: 100%; 
     padding: 10px 20px; 
+    max-height: none;
   }
 
   .modal-left { 
     align-items: center; 
     text-align: center; 
     padding-top: 20px; 
+    min-height: 300px;
   }
 
-    .modal-right{
-      margin-top: 30px;
-    }
+  .modal-right{
+    margin-top: 30px;
+  }
 
   .avatar-large { 
     width: 90px; 
