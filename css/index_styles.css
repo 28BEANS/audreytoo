@@ -13,6 +13,10 @@
     --surface: rgba(255,255,255,1);
 }
 
+.mobile{
+    display: none;
+}
+
 #top-bg{
     background-color: var(--brand-shade);
     height: 10%;
@@ -110,12 +114,24 @@
     background-color: var(--accent-mute);
     padding: 2% 15px;
     border-radius: 30px;
+    border: 1px solid transparent;
+    transition: background 0.3s ease-in-out;
 }
 
 .grid-descriptors > p:nth-of-type(3) a{
     text-decoration: none;
     color: var(--surface);
-    font-size: 1.2em;
+    font-size: 1.3em;
+    font-family: "GFS Neohellenic", sans-serif;
+}
+
+.grid-descriptors > p:nth-of-type(3):hover{
+    background-color: var(--surface);
+    border: 1px solid var(--accent-mute);
+}
+
+.grid-descriptors > p:nth-of-type(3):hover a{
+    color: var(--accent-mute);
 }
 
 #grid-container > .grid-img:nth-child(4n+1) {
@@ -151,12 +167,25 @@
     background-color: var(--accent-mute);
     padding: 5px 35px;
     border-radius: 30px;
+    border: 1px solid transparent;
+    transition: background 0.3s ease-in-out;
 }
 
 #clique > p a{
     text-decoration: none;
     color: var(--surface);
-    font-size: 1.2em;
+    font-size: 1.4em;
+    font-family: "GFS Neohellenic", sans-serif;
+    font-weight: none;
+}
+
+#clique > p:hover{
+    background-color: var(--surface);
+    border: 1px solid var(--accent-mute);
+}
+
+#clique > p:hover a{
+    color: var(--accent-mute);
 }
 
 #plant-collage{
@@ -221,5 +250,112 @@
 
 
 @media (max-width: 480px){
+    .desktop{
+        display: none;
+    }
 
+    .mobile{
+        display: block;
+    }
+
+    #top-word-wrapper{
+        font-size: 1em;
+    }
+
+    #top-img-container img{
+        width: 150px;
+    }
+
+    #grid-bg{
+        height: 750px;
+    }
+
+    .tile-wrapper{
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .tile{
+        height: calc(600px/3);
+        width: 80%;
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tile:nth-of-type(1){
+        background-image: url(../img/npr.brightspotcdn.jpg);
+    }
+
+    .tile:nth-of-type(2){
+        background-image: url(../img/desktop-wallpaper-collection-succulent-succulent-plants-succulents.jpg);
+    }
+
+    .tile:nth-of-type(3){
+        background-image: url(../img/plant-giveaway-featured-image-e958fc4c03ca6ea6-1024x683.jpg);
+    }
+
+    .desc-wrapper{
+        width: 90%;
+        height: 90%;
+        background-color: rgba(255, 255, 255, 0.79);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .desc-header{
+        color: var(--accent-mute);
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .desc-body{
+        font-size: 1.2em;
+        text-align: center;
+        line-height: 1.1em;
+    }
+
+    .desc-btn{
+        font-family: "GFS Neohellenic", sans-serif;
+        font-size: 1.1em;
+        background-color: var(--accent-mute);
+        padding: 5px 10px;
+        border-radius: 30px;
+        border: 1px solid transparent;
+    }
+
+    .desc-btn a{
+        text-decoration: none;
+        color: var(--surface);
+    }
+
+    #clique{
+        padding: 0 5%;
+        min-height: 250px;
+    }
+
+    #clique div p:nth-of-type(1){
+        font-size: 1.5em;
+    }
+
+    #clique div p:nth-of-type(2){
+        font-size: 1em;
+    }
+
+    #clique > p{
+        font-size: 0.8em;
+        padding: 5px 15px;
+    }
 }
