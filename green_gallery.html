@@ -1,120 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>audrey too | Green Gallery</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/gg.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>audrey too | Green Gallery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/gg.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <p>audrey</p>
-            <img src="img/v946-aum-02a-Photoroom.png" alt="hollow flower">
-            <p>too</p>
-        </div>
-
-        <div class="spacer"></div>
-
-        <button class="menu-toggle" id="menu-toggle">
-            <div class="img-home">
-                <img src="img/leaf-svgrepo-com.svg" alt="menu icon">
-            </div>
-            <span class="menu-icon"></span>
-        </button>
-
-        <nav>
-            <ul>
-                <div class="img-home">
-                    <a href="index.html"><img src="img/leaf-svgrepo-com.svg" alt="two leaves"></a>
-                </div>
-                <li><a href="monthly_picks.html">Monthly Picks</a></li>
-                <li class="current-page"><a href="green_gallery.html">Green Gallery</a></li>
-                <li><a href="grow_with_us.html">Grow With Us</a></li>
-                <li><a href="about_us.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section>
-
-
-
-        <div class="gallery"></div>
-        
-
-
-        <div id="nav-gg">
-            <ul>
-                <li id="back" class="btn">Back</li>
-                <li class="active-btn">1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li id="next" class="btn">Next</li>
-            </ul>
-        </div>
-
-
-        
-    </section>
-
-    <!-- this what i added-->
-
-    <!-- Modal -->
-<div id="gallery-modal" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-btn">×</button>
-    <button class="arrow left-arrow">❮</button>
-    <button class="arrow right-arrow">❯</button>
-
-    <!-- Left section -->
-    <div class="modal-left">
-      <div class="user-info">
-        <img id="modal-avatar" class="avatar-large" src="" alt="user avatar">
-        <p id="modal-username"></p>
-        <p id="modal-caption" class="caption"></p>
-      </div>
-
-      <!-- Collapsible plant list -->
-      <div id="plant-panel" class="plant-panel">
-        <div class="panel-header">
-          <h3>Where you can get them</h3>
-          <button id="collapse-btn">⟨</button>
-        </div>
-        <div class="plant-list"></div>
-      </div>
+  <header>
+    <div class="logo">
+      <p>audrey</p>
+      <img src="img/v946-aum-02a-Photoroom.png" alt="hollow flower">
+      <p>too</p>
     </div>
 
-    <!-- Right section -->
-    <div class="modal-right">
-      <img id="modal-image" src="" alt="collection" class="collection-img">
+    <div class="spacer"></div>
+
+    <button class="menu-toggle" id="menu-toggle">
+      <img src="img/leaf-svgrepo-com.svg" alt="menu icon">
+      <span class="menu-icon"></span>
+    </button>
+
+    <nav>
+      <ul>
+        <li class="img-home"><a href="index.html"><img src="img/leaf-svgrepo-com.svg" alt="two leaves"></a></li>
+        <li><a href="monthly_picks.html">Monthly Picks</a></li>
+        <li class="current-page"><a href="green_gallery.html">Green Gallery</a></li>
+        <li><a href="grow_with_us.html">Grow With Us</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="gallery"></div>
+
+    <div id="nav-gg">
+      <ul>
+        <li id="back" class="btn">Back</li>
+        <li class="pagination-btn active-btn">1</li>
+        <li class="pagination-btn">2</li>
+        <li class="pagination-btn">3</li>
+        <li class="pagination-btn">4</li>
+        <li class="pagination-btn">5</li>
+        <li class="pagination-btn">6</li>
+        <li class="pagination-btn">7</li>
+        <li class="pagination-btn">8</li>
+        <li class="pagination-btn">9</li>
+        <li id="next" class="btn">Next</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="gallery-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn">×</button>
+      <button class="arrow left-arrow">❮</button>
+      <button class="arrow right-arrow">❯</button>
+
+      <!-- Left section -->
+      <div class="modal-left">
+        <div class="user-info">
+          <img id="modal-avatar" class="avatar-large" src="" alt="user avatar">
+          <p id="modal-username"></p>
+          <p id="modal-caption" class="caption"></p>
+        </div>
+
+        <!-- Collapsible plant panel desktop -->
+        <div class="desktop">
+          <div class="plant-panel">
+            <div class="panel-header">
+              <h3>Where you can get them</h3>
+              <button class="collapse-btn">⟨</button>
+            </div>
+            <div class="plant-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right section -->
+      <div class="modal-right">
+        <img id="modal-image" src="" alt="collection" class="collection-img">
+
+        <!-- Collapsible plant panel mobile -->
+        <div class="mobile">
+          <div class="plant-panel">
+            <div class="panel-header">
+              <h3>Where you can get them</h3>
+              <button class="collapse-btn">⟨</button>
+            </div>
+            <div class="plant-list"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
+  <footer>
+    <div>
+      <p>&copy; 2025 audrey too</p>
+    </div>
 
-    <footer>
-        <div>
-            <p>&copy; 2025 audrey too</p>
-        </div>
+    <div class="spacer"></div>
 
-        <div class="spacer"></div>
+    <div id="social-icon">
+      <a href="#"><img src="img/facebook-svgrepo-com.svg" alt="facebook logo"></a>
+      <a href="#"><img src="img/instagram-svgrepo-com.svg" alt="instagram logo"></a>
+      <a href="#"><img src="img/discord-svgrepo-com.svg" alt="discord logo"></a>
+    </div>
+  </footer>
 
-        <div id="social-icon">
-            <a href="#"><img src="img/facebook-svgrepo-com.svg" alt="facebook logo"></a>
-            <a href="#"><img src="img/instagram-svgrepo-com.svg" alt="instagram logo"></a>
-            <a href="#"><img src="img/discord-svgrepo-com.svg" alt="discord logo"></a>
-        </div>
-    </footer>
-
-    <script src="script/gg.js"></script>
-    <script src="script/nav.js"></script>
+  <script src="script/gg.js"></script>
+  <script src="script/nav.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+// ----------------- GALLERY DATA -----------------
 const plants = [
   { name: "Evan Hansen", img: "img/collections/collection1.jpg", avatar: "img/avatars/avatar1.jpg" },
   { name: "Evan Hansen", img: "img/collections/collection2.jpg", avatar: "img/avatars/avatar2.jpg" },
@@ -26,13 +27,14 @@ const pagination = document.querySelectorAll("#nav-gg ul li:not(.btn)");
 const backBtn = document.getElementById("back");
 const nextBtn = document.getElementById("next");
 
+// ----------------- PAGINATION -----------------
 function getItemsPerPage() {
   if (window.innerWidth <= 480) return 6;
-  if (window.innerWidth <= 1024) return 9;   // tablet or smaller
-  return 10;                                 // desktop default
+  if (window.innerWidth <= 1024) return 9;
+  return 10;
 }
 
-let itemsPerPage = getItemsPerPage(); 
+let itemsPerPage = getItemsPerPage();
 let currentPage = 1;
 let totalPages = Math.ceil(plants.length / itemsPerPage);
 
@@ -48,8 +50,8 @@ function displayGallery(page) {
     tile.innerHTML = `
       <img src="${item.img}" alt="${item.name}">
       <div class="overlay">
-          <p class="name">${item.name}</p>
-          <img src="${item.avatar}" alt="${item.name}" class="avatar">
+        <p class="name">${item.name}</p>
+        <img src="${item.avatar}" alt="${item.name}" class="avatar">
       </div>
     `;
     gallery.appendChild(tile);
@@ -89,7 +91,6 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-
 window.addEventListener("resize", () => {
   const newItemsPerPage = getItemsPerPage();
   if (newItemsPerPage !== itemsPerPage) {
@@ -104,19 +105,18 @@ window.addEventListener("resize", () => {
 displayGallery(currentPage);
 updateActiveButton();
 
-// ----- MODAL CODE -----
-
+// ----------------- MODAL -----------------
 const modal = document.getElementById("gallery-modal");
-const modalImg = document.getElementById("modal-image");
-const modalAvatar = document.getElementById("modal-avatar");
-const modalUsername = document.getElementById("modal-username");
-const modalCaption = document.getElementById("modal-caption");
-const closeBtn = document.querySelector(".close-btn");
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
-const plantPanel = document.getElementById("plant-panel");
-const collapseBtn = document.getElementById("collapse-btn");
-const plantList = document.querySelector(".plant-list");
+const modalImg = modal.querySelector("#modal-image");
+const modalAvatar = modal.querySelector("#modal-avatar");
+const modalUsername = modal.querySelector("#modal-username");
+const modalCaption = modal.querySelector("#modal-caption");
+const closeBtn = modal.querySelector(".close-btn");
+const leftArrow = modal.querySelector(".left-arrow");
+const rightArrow = modal.querySelector(".right-arrow");
+const plantPanels = modal.querySelectorAll(".plant-panel");
+const collapseBtns = modal.querySelectorAll(".collapse-btn");
+const plantLists = modal.querySelectorAll(".plant-list");
 
 let currentModalIndex = 0;
 
@@ -126,20 +126,24 @@ const examplePlants = [
   { name: "White Barrel Cacti", img: "img/indiv-plants/barrel-cactus.png", link: "#" }
 ];
 
-function populatePlantList() {
-  plantList.innerHTML = "";
-  examplePlants.forEach(p => {
-    const div = document.createElement("div");
-    div.classList.add("plant-item");
-    div.innerHTML = `
-      <div>
-        <h4>${p.name}</h4>
-      </div>
-      <img src="${p.img}" alt="${p.name}">
-      <button onclick="window.open('${p.link}', '_blank')">Check it out</button>
-    `;
-    plantList.appendChild(div);
+function populatePlantLists() {
+  plantLists.forEach(list => {
+    list.innerHTML = "";
+    examplePlants.forEach(p => {
+      const div = document.createElement("div");
+      div.classList.add("plant-item");
+      div.innerHTML = `
+        <div><h4>${p.name}</h4></div>
+        <img src="${p.img}" alt="${p.name}">
+        <button onclick="window.open('${p.link}', '_blank')">Check it out</button>
+      `;
+      list.appendChild(div);
+    });
   });
+}
+
+function getVisiblePlantPanel() {
+  return Array.from(plantPanels).find(panel => window.getComputedStyle(panel.parentElement).display !== "none");
 }
 
 function openModal(index) {
@@ -150,14 +154,15 @@ function openModal(index) {
   modalAvatar.src = item.avatar;
   modalUsername.textContent = item.name;
   modalCaption.textContent = "Not much yet, but here’s my little green corner still learning as I go, but proud of these babies!";
-  populatePlantList();
+  populatePlantLists();
 }
 
 function closeModal() {
   modal.classList.add("hidden");
-  plantPanel.classList.remove("active");
+  plantPanels.forEach(panel => panel.classList.remove("active"));
 }
 
+// ----------------- EVENTS -----------------
 gallery.addEventListener("click", e => {
   const tile = e.target.closest(".tile");
   if (!tile) return;
@@ -175,11 +180,13 @@ rightArrow.addEventListener("click", () => {
 });
 
 modalImg.addEventListener("click", () => {
-  plantPanel.classList.add("active");
-});
-collapseBtn.addEventListener("click", () => {
-  plantPanel.classList.remove("active");
+  const panel = getVisiblePlantPanel();
+  if (panel) panel.classList.add("active");
 });
 
-
-
+collapseBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const panel = btn.closest(".plant-panel");
+    if (panel) panel.classList.remove("active");
+  });
+});
