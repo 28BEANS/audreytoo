@@ -324,14 +324,6 @@
     max-width: 100%; 
   }
 
-  #nav-gg ul{
-    gap: 8px;
-  }
-
-  #nav-gg ul li{
-    font-size: 12px;
-    padding: 5px 10px;
-  }
 
   .modal-content { 
     flex-direction: column; 
@@ -351,8 +343,12 @@
   .modal-left { 
     align-items: center; 
     text-align: center; 
-    padding-top: 50px; 
+    padding-top: 20px; 
   }
+
+    .modal-right{
+      margin-top: 30px;
+    }
 
   .avatar-large { 
     width: 90px; 
@@ -368,9 +364,14 @@
   .caption { 
     font-size: 0.9em; 
     width: 85%; 
+    height: 150px;
     margin-top: 15px; 
     padding: 15px; 
     line-height: 1.3em; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
   }
 
   .collection-img { 

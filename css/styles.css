@@ -21,8 +21,9 @@
 
 body{
     font-family: "Gowun Batang";
+    display: flex;
+    flex-direction: column;
 }
-
 
 header{
     display: flex;

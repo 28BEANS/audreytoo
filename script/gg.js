@@ -23,9 +23,13 @@ const plants = [
 ];
 
 const gallery = document.querySelector(".gallery");
-const pagination = document.querySelectorAll("#nav-gg ul li:not(.btn)");
+const allPageBtns = document.querySelectorAll("#nav-gg ul li.pagination-btn");
 const backBtn = document.getElementById("back");
 const nextBtn = document.getElementById("next");
+
+let currentPage = 1;
+let itemsPerPage = getItemsPerPage();
+let totalPages = Math.ceil(plants.length / itemsPerPage);
 
 // ----------------- PAGINATION -----------------
 function getItemsPerPage() {
@@ -33,10 +37,6 @@ function getItemsPerPage() {
   if (window.innerWidth <= 1024) return 9;
   return 10;
 }
-
-let itemsPerPage = getItemsPerPage();
-let currentPage = 1;
-let totalPages = Math.ceil(plants.length / itemsPerPage);
 
 function displayGallery(page) {
   gallery.innerHTML = "";
@@ -58,19 +58,36 @@ function displayGallery(page) {
   });
 }
 
-function updateActiveButton() {
-  pagination.forEach(btn => btn.classList.remove("active-btn"));
-  const activeBtn = Array.from(pagination).find(btn => Number(btn.textContent) === currentPage);
-  if (activeBtn) activeBtn.classList.add("active-btn");
+function updatePagination() {
+  const maxVisibleBtns = window.innerWidth <= 480 ? 3 : allPageBtns.length;
+  const startIndex = window.innerWidth <= 480
+    ? Math.min(Math.max(currentPage - 2, 0), totalPages - maxVisibleBtns)
+    : 0;
+
+  allPageBtns.forEach((btn, idx) => {
+    if (window.innerWidth <= 480) {
+      if (idx >= startIndex && idx < startIndex + maxVisibleBtns) {
+        btn.style.display = "inline-block";
+      } else {
+        btn.style.display = "none";
+      }
+    } else {
+      btn.style.display = "inline-block";
+    }
+
+    btn.classList.remove("active-btn");
+    if (Number(btn.textContent) === currentPage) btn.classList.add("active-btn");
+  });
 }
 
-pagination.forEach(btn => {
+// Event listeners for pagination buttons
+allPageBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const pageNum = Number(btn.textContent);
     if (!isNaN(pageNum)) {
       currentPage = pageNum;
       displayGallery(currentPage);
-      updateActiveButton();
+      updatePagination();
     }
   });
 });
@@ -79,7 +96,7 @@ backBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     displayGallery(currentPage);
-    updateActiveButton();
+    updatePagination();
   }
 });
 
@@ -87,7 +104,7 @@ nextBtn.addEventListener("click", () => {
   if (currentPage < totalPages) {
     currentPage++;
     displayGallery(currentPage);
-    updateActiveButton();
+    updatePagination();
   }
 });
 
@@ -98,12 +115,12 @@ window.addEventListener("resize", () => {
     totalPages = Math.ceil(plants.length / itemsPerPage);
     currentPage = 1;
     displayGallery(currentPage);
-    updateActiveButton();
+    updatePagination();
   }
 });
 
 displayGallery(currentPage);
-updateActiveButton();
+updatePagination();
 
 // ----------------- MODAL -----------------
 const modal = document.getElementById("gallery-modal");
@@ -142,10 +159,6 @@ function populatePlantLists() {
   });
 }
 
-function getVisiblePlantPanel() {
-  return Array.from(plantPanels).find(panel => window.getComputedStyle(panel.parentElement).display !== "none");
-}
-
 function openModal(index) {
   currentModalIndex = index;
   const item = plants[index];
@@ -155,6 +168,7 @@ function openModal(index) {
   modalUsername.textContent = item.name;
   modalCaption.textContent = "Not much yet, but here’s my little green corner still learning as I go, but proud of these babies!";
   populatePlantLists();
+  plantPanels.forEach(panel => panel.classList.remove("active"));
 }
 
 function closeModal() {
@@ -162,7 +176,7 @@ function closeModal() {
   plantPanels.forEach(panel => panel.classList.remove("active"));
 }
 
-// ----------------- EVENTS -----------------
+// ----------------- MODAL EVENTS -----------------
 gallery.addEventListener("click", e => {
   const tile = e.target.closest(".tile");
   if (!tile) return;
@@ -179,11 +193,13 @@ rightArrow.addEventListener("click", () => {
   if (currentModalIndex < plants.length - 1) openModal(currentModalIndex + 1);
 });
 
+// Open collapsible panel
 modalImg.addEventListener("click", () => {
-  const panel = getVisiblePlantPanel();
+  const panel = Array.from(plantPanels).find(p => window.getComputedStyle(p.parentElement).display !== "none");
   if (panel) panel.classList.add("active");
 });
 
+// Collapse panel buttons
 collapseBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     const panel = btn.closest(".plant-panel");
