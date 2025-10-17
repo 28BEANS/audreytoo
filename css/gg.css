@@ -330,7 +330,7 @@
     align-items: center; 
     justify-content: flex-start; 
     width: 90%; 
-    height: 90vh; 
+    min-height: 90vh; 
     overflow-y: auto; 
     padding: 20px 0; 
   }
@@ -364,7 +364,7 @@
   .caption { 
     font-size: 0.9em; 
     width: 85%; 
-    height: 150px;
+    min-height: 40%;
     margin-top: 15px; 
     padding: 15px; 
     line-height: 1.3em; 
