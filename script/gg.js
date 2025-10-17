@@ -27,6 +27,7 @@ const backBtn = document.getElementById("back");
 const nextBtn = document.getElementById("next");
 
 function getItemsPerPage() {
+  if (window.innerWidth <= 480) return 6;
   if (window.innerWidth <= 1024) return 9;   // tablet or smaller
   return 10;                                 // desktop default
 }
@@ -179,3 +180,6 @@ modalImg.addEventListener("click", () => {
 collapseBtn.addEventListener("click", () => {
   plantPanel.classList.remove("active");
 });
+
+
+
