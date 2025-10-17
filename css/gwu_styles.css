@@ -130,83 +130,102 @@ form{
     }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
     #gwu-form {
         height: 100vh;
-        justify-content: flex-start;
+        padding: 20px 0;
     }
 
     #form-bg-out {
-        height: 85%;
-        padding: 10% 0;
-    }
-
-    #form-bg-in {
-        height: 90%;
-        padding: 5% 10%;
-    }
-
-    #form-header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    #form-header > p {
-        font-size: 1.5em;
-        text-align: center;
-        line-height: 1.2em;
-    }
-
-    #form-header > img {
-        width: 18px;
-        height: 18px;
-    }
-
-    form {
-        min-width: 100%;
+        height: auto;           
+        padding: 20px 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .form-row {
+    #form-bg-in {
+        height: auto;          
+        width: 100%;
+        max-width: 400px;       
+        padding: 20px;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        margin: 15px 0;
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        border-radius: 15px;
+    }
+
+    #form-header {
+        text-align: center;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #form-header > p {
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+
+    #form-header > img {
+        width: 20px;
+        height: 20px;
+    }
+
+    form {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .form-row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin: 10px 0;
     }
 
     form label {
         font-size: 1em;
-        margin-bottom: 8px;
+        text-align: center;
+        margin-bottom: 5px;
     }
 
     .form-row input,
     .form-row select {
-        max-width: 90%;
         width: 90%;
+        max-width: 100%;
         font-size: 1em;
         border-radius: 8px;
         padding: 10px;
     }
 
     #form-btn-wrap {
-        flex-direction: column;
-        padding: 0;
-        gap: 15px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        gap: 10px;
+        padding: 0;
         margin-top: 20px;
     }
 
     #form-btn-wrap button {
         font-size: 1em;
-        padding: 8px 30px;
+        padding: 10px 30px;
         border-radius: 20px;
+        width: 80%;
+        max-width: 250px;
     }
 
-    button#submit{
-        margin-top: 5%;
+    button#submit {
+        margin-top: 10px;
     }
 }
