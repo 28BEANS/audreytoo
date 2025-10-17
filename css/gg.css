@@ -139,7 +139,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
+  background: rgba(1, 22, 68, 0.4);
   color: white;
   border: none;
   border-radius: 50%;
